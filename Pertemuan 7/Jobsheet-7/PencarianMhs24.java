@@ -49,9 +49,4 @@ public class PencarianMhs24 {
             System.out.println("data " + x + "tidak ditemukan");
         }
     }
-
-
-
-
-    
 }

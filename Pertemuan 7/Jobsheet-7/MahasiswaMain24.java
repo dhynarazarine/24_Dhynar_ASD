@@ -29,8 +29,7 @@ public class MahasiswaMain24 {
         System.out.println("---------------------------------------------------");
         System.out.println("Data keseluruhan Mahasiswa  : ");
         data.tampil();
-
-        System.out.println("---------------------------------------------------");
+        
         System.out.println("---------------------------------------------------");
         System.out.println("Pencarian Data : ");
         System.out.println("Masukkan NIM Mahasiswa yang dicari: ");

@@ -5,6 +5,7 @@ public class Sorting24 {
                 System.out.println("Data ditemukan pada indeks ke-" + i);
             }
         }
+        
         System.out.println("Data tidak ditemukan");
     }
 

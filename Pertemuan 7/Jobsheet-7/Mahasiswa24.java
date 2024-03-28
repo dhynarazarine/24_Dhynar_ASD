@@ -17,5 +17,4 @@ public class Mahasiswa24 {
         System.out.println("Umur = " + umur);
         System.out.println("IPK = " + ipk);
     }
-    
 }
