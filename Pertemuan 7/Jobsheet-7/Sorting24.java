@@ -5,12 +5,12 @@ public class Sorting24 {
                 System.out.println("Data ditemukan pada indeks ke-" + i);
             }
         }
-        
+
         System.out.println("Data tidak ditemukan");
     }
 
     public static void main(String[] args) {
-        int[] daftarNilai = {10, 5, 20, 15, 80, 45};
+        int[] daftarNilai = {10, 5, 20, 15, 5, 45};
         sequentialSearch(daftarNilai, 5);
     }
 }
