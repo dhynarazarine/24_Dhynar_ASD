@@ -2,6 +2,7 @@ public class MergeSort24 {
     public void mergeSort(int[] data){
         sort(data, 0, data.length - 1);
     }
+
     public void merge(int data[], int left, int middle, int rigth){
         int[] temp = new int[data.length];
         for (int i = left; i <= rigth; i++){
@@ -26,6 +27,7 @@ public class MergeSort24 {
             data[c + i] = temp[a + i];
         }
     }
+
     public void sort(int data[], int left, int right){
         if (left < right){
             int middle = (left + right) /2;
@@ -34,6 +36,7 @@ public class MergeSort24 {
             merge(data, left, middle, right);
         }
     }
+    
     public void PrintArray(int arr[]){
         int n = arr.length;
         for (int i =0; i < n; i++){

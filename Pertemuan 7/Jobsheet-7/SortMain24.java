@@ -3,6 +3,7 @@ public class SortMain24 {
         int data[] = {10, 40, 30, 50, 70, 20, 100, 90};
         System.out.println("Sorting dengan merge sort");
         MergeSort24 mSort = new MergeSort24();
+        
         System.out.println("-------------------------");
         System.out.println("Data awal");
         mSort.PrintArray(data);
