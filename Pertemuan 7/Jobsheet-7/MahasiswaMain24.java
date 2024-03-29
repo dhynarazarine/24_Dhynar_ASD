@@ -6,12 +6,15 @@ public class MahasiswaMain24 {
         Scanner s = new Scanner (System.in);
         Scanner sl = new Scanner (System.in);
 
-        PencarianMhs24 data = new PencarianMhs24();
-        int jumMhs = 5;
+        // int jumMhs = 5;
+        
+        System.out.print("Input jumlah Mahasiswa: ");
+        int maxSize = s.nextInt();
+        PencarianMhs24 data = new PencarianMhs24(maxSize);
 
         System.out.println("-----------------------------------------------");
         System.out.println("Masukkan data mahasiswa secara Urut dari NIM Terkecil");
-        for (int i = 0; i < jumMhs; i++){
+        for (int i = 0; i < maxSize; i++){
             System.out.println("-------------------------");
             System.out.print("Nim\t: ");
             int nim = s.nextInt();
@@ -35,9 +38,18 @@ public class MahasiswaMain24 {
         System.out.println("Masukkan NIM Mahasiswa yang dicari: ");
         System.out.print("NIM : ");
         int cari = s.nextInt();
+
+        //Sequential Search
         System.out.println("menggunakan sequential Search");
         int posisi = data.FindSeqSearch(cari);
+        data.TampilPosisi(cari, posisi);
+        data.TampilData(cari, posisi);
 
+
+        //Binary Search
+        System.out.println("==============================");
+        System.out.println("menggunakan binary search");
+        posisi = data.FindBinarySearch(cari, 0, maxSize-1);
         data.TampilPosisi(cari, posisi);
         data.TampilData(cari, posisi);
     }
