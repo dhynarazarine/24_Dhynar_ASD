@@ -31,7 +31,6 @@ public class Sorting24 {
     return -1;
 }
 
-
     public static void main(String[] args) {
         int[] daftarNilai = {10, 5, 20, 15, 5, 45};
         sequentialSearch(daftarNilai, 5);

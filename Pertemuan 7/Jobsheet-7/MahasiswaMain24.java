@@ -6,7 +6,7 @@ public class MahasiswaMain24 {
         Scanner s = new Scanner (System.in);
         Scanner sl = new Scanner (System.in);
 
-        // int jumMhs = 5;
+        int jumMhs = 5;
         
         System.out.print("Input jumlah Mahasiswa: ");
         int maxSize = s.nextInt();

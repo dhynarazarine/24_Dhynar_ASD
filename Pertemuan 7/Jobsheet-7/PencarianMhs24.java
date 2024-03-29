@@ -1,7 +1,7 @@
 public class PencarianMhs24 {
     Mahasiswa24 listMhs[] = new Mahasiswa24[5];
     int idx;
-
+    //modif
     public PencarianMhs24 (int maxSize){
         listMhs = new Mahasiswa24[maxSize];
     }

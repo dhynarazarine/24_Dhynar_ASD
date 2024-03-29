@@ -10,7 +10,6 @@ public class Mahasiswa24 {
         umur = u;
         ipk = i;
     }
-
     void tampil(){
         System.out.println("Nim = " + nim);
         System.out.println("Nama = " + nama);
