@@ -55,8 +55,10 @@ public class StackPakaian24 {
                 top--;
             }
             System.out.println("Stack sudah dikosongkan");
+        
         } else {
             System.out.println("Stack masih kosong");
+
         }
     }
 }

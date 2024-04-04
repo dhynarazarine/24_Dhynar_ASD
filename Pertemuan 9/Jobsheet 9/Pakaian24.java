@@ -8,5 +8,6 @@ public class Pakaian24 {
         this.merk   = merk;
         this.ukuran = ukuran;
         this.harga  = harga;
+        
     }
 }

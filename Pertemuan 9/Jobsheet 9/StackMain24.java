@@ -22,7 +22,8 @@ public class StackMain24 {
             pilih = sc.next().charAt(0);
             sc.nextLine();
             stk.push(p);
-        } while (pilih == 'y');
+            
+        }   while (pilih == 'y');
             stk.print();
             stk.pop();
             stk.peek();
