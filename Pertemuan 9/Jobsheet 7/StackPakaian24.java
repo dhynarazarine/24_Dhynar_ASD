@@ -60,7 +60,7 @@ public class StackPakaian24 {
             System.out.println("Stack masih kosong");
     }
 }
-    
+    // Tugas nomor 1
     public void getMax() {
         if (!isEmpty()) {
             Pakaian24 maxPakaian = data[0]; // Asumsikan elemen pertama sebagai pakaian dengan harga tertinggi
