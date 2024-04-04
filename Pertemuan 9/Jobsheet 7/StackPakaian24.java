@@ -58,7 +58,26 @@ public class StackPakaian24 {
         
         } else {
             System.out.println("Stack masih kosong");
-
+    }
+}
+    
+    public void getMax() {
+        if (!isEmpty()) {
+            Pakaian24 maxPakaian = data[0]; // Asumsikan elemen pertama sebagai pakaian dengan harga tertinggi
+            for (int i = 1; i <= top; i++) {
+                if (data[i].harga > maxPakaian.harga) { // Jika harga pakaian saat ini lebih tinggi dari harga pakaian tertinggi sebelumnya
+                    maxPakaian = data[i]; // Update pakaian dengan harga tertinggi
+                }
+            }
+            // Tampilkan data pakaian dengan harga tertinggi
+            System.out.println("Data pakaian dengan harga tertinggi:");
+            System.out.println("Jenis: " + maxPakaian.jenis);
+            System.out.println("Warna: " + maxPakaian.warna);
+            System.out.println("Merk: " + maxPakaian.merk);
+            System.out.println("Ukuran: " + maxPakaian.ukuran);
+            System.out.println("Harga: " + maxPakaian.harga);
+        } else {
+            System.out.println("Stack masih kosong");
         }
     }
 }
