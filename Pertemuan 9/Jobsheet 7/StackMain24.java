@@ -12,7 +12,7 @@ public class StackMain24 {
             System.out.println("3. Peek");
             System.out.println("4. Print");
             System.out.println("5. Keluar");
-            System.out.println("Pilihan (1 - 5)");
+            System.out.print("Pilihan (1 - 5) : ");
             int menu = sc.nextInt();
             sc.nextLine();
 
@@ -48,7 +48,7 @@ public class StackMain24 {
                     System.out.println("Piliham tidak valid!!!");
             }
 
-            System.out.println("\nApakah anda ingin melanjutkan (y/n)? ");
+            System.out.print("\nApakah anda ingin melanjutkan (y/n)? ");
             pilih = sc.next().charAt(0);
             sc.nextLine();
         }
@@ -57,22 +57,21 @@ public class StackMain24 {
 
 //Tugas nomor 1
 // import java.util.Scanner;
-
 // public class StackMain24 {
 //     public static void main(String[] args) {
 //         StackPakaian24 stk = new StackPakaian24(5);
 //         Scanner sc = new Scanner(System.in);
 //         char pilih = ' ';
 //         do {
-//             System.out.print("Jenis: ");
+//             System.out.print("Jenis : ");
 //             String jenis = sc.nextLine();
-//             System.out.print("Warna: ");
+//             System.out.print("Warna : ");
 //             String warna = sc.nextLine();
-//             System.out.print("Merk: ");
+//             System.out.print("Merk  : ");
 //             String merk = sc.nextLine();
 //             System.out.print("Ukuran: ");
 //             String ukuran = sc.nextLine();
-//             System.out.print("Harga: ");
+//             System.out.print("Harga : ");
 //             double harga = sc.nextDouble();
 
 //             Pakaian24 p = new Pakaian24(jenis, warna, merk, ukuran, harga);
