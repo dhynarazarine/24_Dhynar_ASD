@@ -10,6 +10,5 @@ public class StackDemo24 {
         stack.pop();
         stack.push(-5);
         stack.print();
-        
     }
 }

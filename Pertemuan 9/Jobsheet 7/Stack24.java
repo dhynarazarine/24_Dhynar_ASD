@@ -27,7 +27,7 @@ public class Stack24 {
             top++;
             data[top] = dt;
         } else {
-            System.out.println("Stack penuh ");
+            System.out.println("Stack penuh");
         }
     }
     public void pop(){
