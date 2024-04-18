@@ -57,6 +57,7 @@ public class Stack24 {
             System.out.println("Stack sudah dikosongkan");
         } else {
             System.out.println("Stack masih kosong");
+            
         }
     }
 }

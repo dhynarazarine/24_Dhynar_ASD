@@ -90,6 +90,7 @@ public class StackPakaian24 {
             System.out.println("Harga: " + maxPakaian.harga);
         } else {
             System.out.println("Stack masih kosong");
+            
         }
     }
 }

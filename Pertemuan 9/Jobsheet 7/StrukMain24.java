@@ -44,7 +44,6 @@ public class StrukMain24{
             System.out.println("Struk yang ditukarkan ke-" + (i + 1) + ":\n" + strukDitukar);
             System.out.println("=======================================================");
         }
-
         scanner.close();
     }
 }

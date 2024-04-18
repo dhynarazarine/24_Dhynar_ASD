@@ -12,12 +12,11 @@ public class Struk24 {
         this.jumlahBarang = jumlahBarang;
         this.totalHargaBayar = totalHargaBayar;
     }
-
     public String toString() {
         return "Nomor Transaksi: " + nomorTransaksi +
                 "\nTanggal Pembelian: " + tanggalPembelian +
                 "\nJumlah Barang: " + jumlahBarang +
                 "\nTotal Harga Bayar: " + totalHargaBayar + "\n";
-    }
 
+    }
 }
