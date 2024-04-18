@@ -55,7 +55,7 @@ public class StackMain24 {
     }
 }      
 
-//Tugas nomor 1
+// Tugas nomor 1
 // import java.util.Scanner;
 // public class StackMain24 {
 //     public static void main(String[] args) {

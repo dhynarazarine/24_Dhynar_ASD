@@ -13,7 +13,6 @@ public class Struk24 {
         this.totalHargaBayar = totalHargaBayar;
     }
 
-    @Override
     public String toString() {
         return "Nomor Transaksi: " + nomorTransaksi +
                 "\nTanggal Pembelian: " + tanggalPembelian +
