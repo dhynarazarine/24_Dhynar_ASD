@@ -63,6 +63,7 @@ public class Queue24 {
     public void Enqueue (int dt) {
         if (isFull()) {
             System.out.println("Queue sudah penuh");
+            System.exit(0); //Modifikasi
         } else {
             if (isEmpty()) {
                 front = rear = 0;
