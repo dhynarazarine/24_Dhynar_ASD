@@ -21,6 +21,7 @@ public class DoubleLinkedLists {
         }
         size++;
     }
+    
     public void addLast(int item) {
         if (isEmpty()){
             addFirst(item);
@@ -34,6 +35,8 @@ public class DoubleLinkedLists {
             size++;
         }
     }
+
+
     public void add(int item, int index) throws Exception {
         if (isEmpty()) {
             addFirst(item);
