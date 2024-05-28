@@ -14,7 +14,7 @@ public class QueueMain {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Masukkan kapasitas queue: ");
+        System.out.print("Masukkan kapasitas Pasien: ");
         int jumlah = sc.nextInt();
         Queue antri = new Queue(jumlah);
         int pilih;
