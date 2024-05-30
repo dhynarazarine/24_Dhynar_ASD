@@ -64,4 +64,14 @@ public class Graph24 {
         System.out.println("");
     }
 
+    //Modifikasi
+    public boolean jikaBenar(int asal, int tujuan) throws Exception {
+        for(int i = 0; i < list[asal].size(); i++) {
+            if (list[asal].get(i) == tujuan) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
+

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class GraphMain24 {
     public static void main(String[] args) throws Exception{
         Graph24 gedung = new Graph24(6);
@@ -13,19 +15,26 @@ public class GraphMain24 {
         gedung.removeEdge(1, 3);
         gedung.printGraph();
 
-        //Percobaan 2
-        GraphMatriks24 gdg = new GraphMatriks24(4);
-        gdg.makeEdge(0, 1, 50);
-        gdg.makeEdge(1, 0, 60);
-        gdg.makeEdge(1, 2, 70);
-        gdg.makeEdge(2, 1, 80);
-        gdg.makeEdge(2, 3, 40);
-        gdg.makeEdge(3, 0, 90);
-        gdg.printGraph();
-        System.out.println();
-        System.out.println("Hasil setelah penghapusan Edge");
-        gdg.removeEdge(2, 1);
-        System.out.println();
-        gdg.printGraph();
+        //Modifikasi Percobaan 1
+        Scanner sc = new Scanner(System.in);
+        int asal, tujuan;
+
+        System.out.print("Masukkan inputan: ");
+        int input = sc.nextInt();
+
+        for (int i = 0; i < input; i++) {
+            System.out.print("Masukkan gedung asal: ");
+            asal = sc.nextInt();
+            System.out.print("Masukkan gedung tujuan: ");
+            tujuan = sc.nextInt();
+            if (gedung.jikaBenar(asal, tujuan)) {
+                System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " bertetangga");
+            } else {
+                System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " tidak bertetangga");
+            }
+            System.out.println();
+        }
+        sc.close();
+
     }
 }

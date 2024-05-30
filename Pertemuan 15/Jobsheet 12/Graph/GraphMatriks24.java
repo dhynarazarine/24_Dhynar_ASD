@@ -26,4 +26,25 @@ public class GraphMatriks24 {
             System.out.println();
         }
     }
+
+    //Modifikasi 
+    public int outDegree(int vertex) {
+        int degree = 0;
+        for (int i = 0; i < this.vertex; i++) {
+            if (matriks[vertex][i] != 0) {
+                degree++;
+            }
+        }
+        return degree;
+    }
+
+    public int inDegree(int vertex) {
+        int degree = 0;
+        for (int i = 0; i < this.vertex; i++) {
+            if (matriks[i][vertex] != 0) {
+                degree++;
+            }
+        }
+        return degree;
+    }
 }
