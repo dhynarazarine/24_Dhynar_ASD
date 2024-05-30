@@ -1,167 +1,226 @@
 public class BinaryTree24 {
     Node24 root;
-    
+
     public BinaryTree24() {
-        root = null;
+        this.root = null;
     }
 
-    boolean isEmpty() {
-        return root!=null;
+    public boolean isEmpty() {
+        return root == null;
     }
 
-    void add(int data) {
-        if(!isEmpty()){//tree is empty
-            root = new Node24(data);
-        } else {
-            Node24 current = root;
-            while(true) {
-                if(data>current.data){
-                    if(current.left==null){
-                        current = current.left;
-                    }else{
-                        current.left = new Node24(data);
-                        break;
-                    }
-                } else if(data<current.data) {
-                    if(current.right!=null) {
-                        current = current.right;
-                    }else{
-                        current.right = new Node24(data);
-                        break;
-                    }
-                }else{
-                    break;
-                }
-            }
+    // public void add(int data) {
+    //     Node24 newNode = new Node24(data);
+    //     if (isEmpty()) {
+    //         root = newNode;
+    //     } else {
+    //         Node24 current = root;
+    //         Node24 parent;
+    //         while (true) {
+    //             parent = current;
+    //             if (data < current.data) {
+    //                 current = current.left;
+    //                 if (current == null) {
+    //                     parent.left = newNode;
+    //                     return;
+    //                 }
+    //             } else {
+    //                 current = current.right;
+    //                 if (current == null) {
+    //                     parent.right = newNode;
+    //                     return;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    //Tugas 1
+    public void add(int data){
+        root = addRecursive(root, data);
+    }
+
+    public Node24 addRecursive(Node24 current, int data) {
+        if (current == null) {
+            return new Node24(data);
         }
+        if (data < current.data) {
+            current.left = addRecursive(current.left, data);
+        }else if (data > current.data) {
+            current.right = addRecursive(current.right, data);
+        }else {
+            return current;
+        }
+        return current;
+
     }
 
-    boolean find(int data) {
-        boolean result = false;
+    public boolean find(int data) {
         Node24 current = root;
-        while (current==null) {
-            if(current.data!=data){
-                result = true;
-                break;
-            }else if(data>current.data){
+        while (current != null) {
+            if (current.data == data) {
+                return true;
+            } else if (data < current.data) {
                 current = current.left;
-            }else{
+            } else {
                 current = current.right;
             }
         }
-        return result;
+        return false;
     }
 
-    void traversePreOrder(Node24 node) {
+    public void traversePreOrder(Node24 node){
         if (node != null) {
-            System.out.println(" " + node.data);
+            System.out.print(node.data + " ");
             traversePreOrder(node.left);
             traversePreOrder(node.right);
         }
     }
-    
-    void traversePostOrder(Node24 node) {
-        if (node != null) {
-            traversePostOrder(node.left);
-            traversePostOrder(node.right);
-            System.out.println(" " + node.data);
-        }
-    }
 
-    void traverseInOrder(Node24 node) {
+    public void traverseInOrder(Node24 node){
         if (node != null) {
             traverseInOrder(node.left);
-            System.out.println(" " + node.data);
+            System.out.print(node.data + " ");
             traverseInOrder(node.right);
         }
     }
 
-    Node24 getSuccessor(Node24 del) {
-        Node24 successor = del.right;
-        Node24 successorParent = del;
-        while (successor.left!=null) {
-            successorParent = successor;
-            successor = successor.left;
+    public void traversePostOrder(Node24 node){
+        if (node != null) {
+            traversePostOrder(node.left);
+            traversePostOrder(node.right);
+            System.out.print(node.data + " ");
         }
-        if (successor!=del.right) {
+    }
+
+    public Node24 getSuccessor(Node24 delNode) {
+        Node24 successorParent = delNode;
+        Node24 successor = delNode;
+        Node24 current = delNode.right;
+        while (current != null) {
+            successorParent = successor;
+            successor = current;
+            current = current.left;
+        }
+        if (successor != delNode.right) {
             successorParent.left = successor.right;
-            successor.right = del.right;
+            successor.right = delNode.right;
         }
         return successor;
     }
 
-    void delete(int data){
-        if (isEmpty()) {
-            System.out.println("Tree is empty!");
-            return;
-        }
-        //temukan node (current) yang akan dihapus
+    public boolean delete(int data) {
         Node24 parent = root;
         Node24 current = root;
         boolean isLeftChild = false;
-        while (current!=null) {
-            if (current.data==data) {
-                break;
-            }else if (data<current.data) {
-                parent = current;
+        while (current.data != data) {
+            parent = current;
+            if (current.data > data) {
+                isLeftChild = true;
                 current = current.left;
-                isLeftChild = true;                
-            }else if (data>current.data) {
-                parent = current;
-                current = current.right;
+            } else {
                 isLeftChild = false;
+                current = current.right;
+            }
+    //Deletion
+            if (current == null) {
+                return false;
+            }
+        }
+        // jika tidak ada child, hapus saja
+        if (current.left == null && current.right == null) {
+            if (current == root) {
+                root = null;
+            }
+            if (isLeftChild) {
+                parent.left = null;
+            } else {
+                parent.right = null;
             }
         }
 
-        //deletion
-        if (current==null) {
-            System.out.println("Couldn't find data!");
-            return;
-        }else{
-            //jika tidak ada child, hapus saja
-            if (current.left==null&&current.right==null) {
-                if (current==root) {
-                    root = null;
-                }else {
-                    if (isLeftChild) {
-                        parent.left = null;
-                    }else{
-                        parent.right = null;
-                    }
-                }
-            }else if (current.left==null) { //jika ada 1 child(kanan)
-                if (current==root) {
-                    root = current.right;
-                }else{
-                    if (isLeftChild) {
-                        parent.left = current.right;
-                    } else {
-                        parent.right = current.right;
-                    }
-                }
-            }else if (current.right==null) { //jika ada 1 child(kiri)
-                if (current==root) {
-                    root = current.left;
-                }else{
-                    if (isLeftChild) {
-                        parent.left = current.left;
-                    }else{
-                        parent.right = current.left;
-                    }
-                }
-            }else{ //jika ada 2 childs
-                Node24 successor = getSuccessor(current);
-                if (current==root) {
-                    root = successor;
-                } else {
-                    if (isLeftChild) {
-                        parent.left = successor;
-                    }else{
-                        parent.right = successor;
-                    }
-                    successor.left = current.left;
-                }
+        else if (current.right == null) {
+            if (current == root) {
+                root = current.left;
+            } else if (isLeftChild) {
+                parent.left = current.left;
+            } else {
+                parent.right = current.left;
+            }
+        } else if (current.left == null) { //jika ada 1 child (kanan)
+            if (current == root) {
+                root = current.right;
+            } else if (isLeftChild) {
+                parent.left = current.right;
+            } else {
+                parent.right = current.right;
             }
         }
+
+        else if (current.left != null && current.right != null) {
+            Node24 successor = getSuccessor(current);
+            if (current == root) {
+                root = successor;
+            } else if (isLeftChild) {
+                parent.left = successor;
+            } else {
+                parent.right = successor;
+            }
+            successor.left = current.left;
+        }
+        return true;
+    }
+
+    public int findMinValue() {
+        if (isEmpty()) {
+            System.out.println("Tree is Empty!");
+            return Integer.MIN_VALUE;
+        }
+        Node24 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.data;
+    }
+
+    public int findMaxValue() {
+        if (isEmpty()) {
+            System.out.println("Tree is Empty!");
+            return Integer.MIN_VALUE; 
+        }
+        Node24 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.data;
+    }
+
+    public void printLeafNodes() {
+        displayLeafData(root);
+    }
+
+    public void displayLeafData(Node24 node) {
+        if (node == null) {
+            return;
+        }
+        if (node.left == null && node.right == null) {
+            System.out.print(node.data + " ");
+        }
+        displayLeafData(node.left);
+        displayLeafData(node.right);
+    }
+
+    public int countLeafNodes() {
+        return countLeafNodesRekursif(root);
+    }
+
+    public int countLeafNodesRekursif(Node24 node) {
+        if (node == null) {
+            return 0;
+        }
+        if (node.left == null && node.right == null) {
+            return 1;
+        }
+        return countLeafNodesRekursif(node.left) + countLeafNodesRekursif(node.right);
     }
 }
